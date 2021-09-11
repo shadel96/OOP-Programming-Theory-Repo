@@ -4,15 +4,38 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public GameObject destinationObj;
+    private Vector3 destination;
+    private float repeatTiming;
+    private float animalSpeed;
+
+
     void Start()
     {
-        
+        SetParams();
+        InvokeRepeating("MoveToDestination", 1f, repeatTiming);
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void SetParams()
     {
-        
+        repeatTiming = 4f;
+        animalSpeed = 4f;
+    }
+
+    public virtual void MoveToDestination()
+    {
+        destination = destinationObj.transform.position;
+    }
+
+    private void Update()
+    {
+        GoTo(destination)
+    }
+
+    public void GoTo(Vector3 position)
+    {
+        transform.position = Vector3.MoveTowards(transform.position, position, animalSpeed * Time.deltaTime);
+
     }
 }

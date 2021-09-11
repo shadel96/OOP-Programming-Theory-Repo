@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal;
     private float vertical;
     public float playerSpeed = 5f;
+    private Vector3 destination;
 
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-        Vector3 destination = new Vector3(horizontal, vertical, 0);
+        destination = new Vector3(horizontal, vertical, 0);
         destination = destination.normalized * playerSpeed * Time.deltaTime;
 
         transform.position += destination;
