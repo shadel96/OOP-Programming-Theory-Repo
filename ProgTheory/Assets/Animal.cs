@@ -7,7 +7,13 @@ public class Animal : MonoBehaviour
 
     public GameObject destinationObj;
     public Vector3 destination;
-    public float repeatTiming;
+    private float _repeatTiming;
+    private float _animalSpeed;
+    public float repeatTiming
+    {
+        get { return _repeatTiming; } // getter returns backing field
+        set { _repeatTiming = value; } // setter uses backing field
+    }
     public float animalSpeed;
 
 
