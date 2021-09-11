@@ -11,10 +11,38 @@ public class Animal : MonoBehaviour
     private float _animalSpeed;
     public float repeatTiming
     {
-        get { return _repeatTiming; } // getter returns backing field
-        set { _repeatTiming = value; } // setter uses backing field
+        get { return _repeatTiming; }
+        set
+        {
+            if (value < 0.0f)
+            {
+
+                Debug.LogError("You can't set a negative value");
+            }
+            else
+            {
+                _repeatTiming = value;
+            }
+        }
     }
-    public float animalSpeed;
+
+    public float animalSpeed
+    {
+        get { return _animalSpeed; }
+        set
+        {
+            if (value < 0.0f)
+            {
+
+                Debug.LogError("You can't set a negative value");
+            }
+            else
+            {
+                _animalSpeed = value;
+            }
+        }
+    }
+
 
 
     void Start()
