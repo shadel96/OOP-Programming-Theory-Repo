@@ -9,6 +9,8 @@ public class Animal : MonoBehaviour
     public Vector3 destination;
     private float _repeatTiming;
     private float _animalSpeed;
+
+    //ENCAPSULATION
     public float repeatTiming
     {
         get { return _repeatTiming; }
@@ -47,6 +49,7 @@ public class Animal : MonoBehaviour
 
     void Start()
     {
+        //ABSTRACTION
         SetParams();
         SetDestination();
         MoveToDestination(repeatTiming);

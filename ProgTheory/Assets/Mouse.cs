@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//INHERITANCE
 public class Mouse : Animal
 {
 
@@ -10,7 +11,9 @@ public class Mouse : Animal
         repeatTiming = 7.5f;
         animalSpeed = 9f;
     }
+        
 
+    //POLYMORPHISM
     public override void SetDestination()
     {
         float x = Random.Range(-10f, 10f);
